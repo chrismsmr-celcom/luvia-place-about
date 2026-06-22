@@ -1,0 +1,2296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Luvia Place | La Biographie Officielle d'une Ambition</title>
+    
+    <!-- Meta Tags SEO -->
+    <meta name="description" content="La biographie officielle de Luvia Place - L'histoire d'une start-up kinoise qui révolutionne le voyage en Afrique">
+    <meta property="og:title" content="Luvia Place | La Biographie Officielle d'une Ambition">
+    <meta property="og:description" content="Découvrez l'histoire de Luvia Place, la plateforme de voyage nouvelle génération née à Kinshasa">
+    <meta name="keywords" content="Luvia Place, voyage, RDC, Kinshasa, start-up, tourisme, Afrique, OTA">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           DESIGN SYSTEM - LITERARY & BIO EDITION (LUVIA PLACE)
+           ========================================================================== */
+        :root {
+            --bg-pure: #ffffff;
+            --bg-book-cream: #fbfbfd;
+            --primary: #0052cc;
+            --primary-dark: #003d99;
+            --accent: #00d2c4;
+            --text-editorial: #111827;
+            --text-secondary: #4b5563;
+            --border-line: #e5e7eb;
+            --font-serif: 'Fraunces', serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --transition-book: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
+        }
+
+        body.dark-mode {
+            --bg-pure: #0f172a;
+            --bg-book-cream: #1e293b;
+            --text-editorial: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border-line: #334155;
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-pure);
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--text-editorial);
+            background-color: var(--bg-pure);
+            overflow-x: hidden;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            width: 100%;
+            max-width: 100vw;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 5px;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ==========================================================================
+           ICÔNES SVG
+           ========================================================================== */
+        .icon {
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .icon-sm {
+            width: 16px;
+            height: 16px;
+        }
+
+        .icon-md {
+            width: 24px;
+            height: 24px;
+        }
+
+        .icon-lg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .icon svg {
+            width: 100%;
+            height: 100%;
+            fill: currentColor;
+            stroke: currentColor;
+            stroke-width: 0;
+        }
+
+        .icon-stroke svg {
+            stroke-width: 1.5;
+            fill: none;
+        }
+
+        /* ==========================================================================
+           BARRE DE PROGRESSION DE LECTURE
+           ========================================================================== */
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            z-index: 1001;
+            background: transparent;
+        }
+
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transition: width 0.1s ease;
+        }
+
+        /* ==========================================================================
+           BARRE DE NAVIGATION INTERACTIVE
+           ========================================================================== */
+        .navbar {
+            position: fixed;
+            top: 3px;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-line);
+            padding: 12px 0;
+            transition: var(--transition-book);
+        }
+
+        body.dark-mode .navbar {
+            background: rgba(15, 23, 42, 0.92);
+        }
+
+        .navbar.scrolled {
+            padding: 8px 0;
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            width: 95%;
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5px;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            transition: var(--transition-book);
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--text-editorial);
+            transition: var(--transition-book);
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(4px, 4px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(4px, -4px);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            color: var(--text-editorial);
+            text-decoration: none;
+            margin: 0 8px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: var(--transition-book);
+            opacity: 0.7;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            opacity: 1;
+            color: var(--primary);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition-book);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: none;
+            background: none;
+            font-family: var(--font-sans);
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--text-editorial);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 82, 204, 0.3);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-line);
+            color: var(--text-editorial);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* Dark Mode Toggle */
+        .dark-toggle {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid var(--border-line);
+            background: transparent;
+            color: var(--text-editorial);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-book);
+            flex-shrink: 0;
+        }
+
+        .dark-toggle:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: rotate(15deg);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 65px;
+            left: 0;
+            width: 100%;
+            background: var(--bg-pure);
+            border-bottom: 1px solid var(--border-line);
+            padding: 20px;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 999;
+            box-shadow: var(--shadow);
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            color: var(--text-editorial);
+            text-decoration: none;
+            padding: 12px 0;
+            font-size: 15px;
+            font-weight: 500;
+            border-bottom: 1px solid var(--border-line);
+            transition: var(--transition-book);
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary);
+            padding-left: 10px;
+        }
+
+        /* ==========================================================================
+           PROLOGUE - HERO AVEC ANIMATIONS FLOTTANTES
+           ========================================================================== */
+        .hero-book-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding-top: 100px;
+            padding-bottom: 40px;
+            background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%);
+            overflow: hidden;
+            width: 100%;
+        }
+
+        body.dark-mode .hero-book-section {
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        .floating-particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            opacity: 0.08;
+            animation: float-particle 20s infinite ease-in-out;
+        }
+
+        body.dark-mode .particle {
+            opacity: 0.15;
+        }
+
+        .particle:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            top: -80px;
+            right: -40px;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            bottom: -30px;
+            left: -30px;
+            animation-delay: -5s;
+        }
+
+        .particle:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            left: 50%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float-particle {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(20px, -20px) scale(1.1);
+            }
+            50% {
+                transform: translate(-15px, 15px) scale(0.9);
+            }
+            75% {
+                transform: translate(25px, 10px) scale(1.05);
+            }
+        }
+
+        .book-container {
+            width: 92%;
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+            padding: 0 10px;
+        }
+
+        .book-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--primary);
+            font-size: 13px;
+            margin-bottom: 20px;
+            padding: 6px 16px;
+            border: 1px solid var(--border-line);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            animation: pulse-badge 3s ease-in-out infinite;
+        }
+
+        body.dark-mode .book-badge {
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        @keyframes pulse-badge {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03);
+            }
+        }
+
+        .hero-book-section h1 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            font-size: clamp(28px, 5vw, 56px);
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 25px;
+            color: var(--text-editorial);
+            animation: fade-up 1s ease forwards;
+        }
+
+        .book-lead {
+            font-size: clamp(15px, 1.8vw, 18px);
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            animation: fade-up 1s ease 0.2s forwards;
+            opacity: 0;
+            padding: 0 5px;
+        }
+
+        @keyframes fade-up {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .social-channels {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .social-link-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: white;
+            border: 1px solid var(--border-line);
+            color: var(--text-editorial);
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            border-radius: 50px;
+            transition: var(--transition-book);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        body.dark-mode .social-link-badge {
+            background: var(--bg-book-cream);
+        }
+
+        .social-link-badge:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(0, 82, 204, 0.1);
+            color: var(--primary);
+        }
+
+        .btn-scroll-down {
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-book);
+            animation: bounce-down 2s ease-in-out infinite;
+        }
+
+        .btn-scroll-down:hover {
+            color: var(--primary);
+        }
+
+        @keyframes bounce-down {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(6px);
+            }
+        }
+
+        /* ==========================================================================
+           SECTIONS CHAPITRES AVEC ANIMATIONS AU SCROLL
+           ========================================================================== */
+        .chapter-section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-line);
+            position: relative;
+            width: 100%;
+        }
+
+        .alternate-bg {
+            background-color: var(--bg-book-cream);
+        }
+
+        .chapter-header {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .chapter-header.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .chapter-number {
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--primary);
+            font-size: 16px;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .chapter-header h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .biography-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .biography-text {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s ease 0.2s;
+        }
+
+        .biography-text.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .biography-text p {
+            color: var(--text-secondary);
+            font-size: clamp(15px, 1.2vw, 16.5px);
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .dropcap {
+            font-family: var(--font-serif);
+            font-size: 55px;
+            float: left;
+            line-height: 40px;
+            padding-top: 4px;
+            padding-right: 6px;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        .biography-visual {
+            display: flex;
+            justify-content: flex-end;
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s ease 0.4s;
+        }
+
+        .biography-visual.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .author-card {
+            width: 100%;
+            max-width: 340px;
+            background: white;
+            border: 1px solid var(--border-line);
+            padding: 14px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition-book);
+        }
+
+        body.dark-mode .author-card {
+            background: var(--bg-book-cream);
+        }
+
+        .author-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 82, 204, 0.08);
+        }
+
+        .author-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: var(--transition-book);
+        }
+
+        .author-img:hover {
+            transform: scale(1.02);
+        }
+
+        .author-meta {
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        .author-meta h4 {
+            font-family: var(--font-serif);
+            font-size: 16px;
+        }
+
+        .author-meta p {
+            font-size: 11px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ==========================================================================
+           MANIFESTO ET BLOCKS TEXTE
+           ========================================================================== */
+        .manifesto-box {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            opacity: 0;
+            transform: scale(0.95);
+            transition: all 0.8s ease;
+            padding: 0 10px;
+        }
+
+        .manifesto-box.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .manifesto-box blockquote {
+            font-family: var(--font-serif);
+            font-size: clamp(20px, 2.2vw, 26px);
+            font-style: italic;
+            line-height: 1.5;
+            color: var(--primary);
+            margin-bottom: 30px;
+            padding: 20px;
+            border-left: 4px solid var(--primary);
+            background: rgba(0, 82, 204, 0.03);
+            border-radius: 4px;
+        }
+
+        .manifesto-body {
+            font-size: clamp(15px, 1.1vw, 16.5px);
+            color: var(--text-secondary);
+        }
+
+        .chapter-intro {
+            font-size: clamp(15px, 1.1vw, 17px);
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 5px;
+        }
+
+        .grid-page {
+            border-top: 2px solid var(--primary);
+            padding-top: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .grid-page.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .grid-page:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+        .grid-page:nth-child(3) {
+            transition-delay: 0.4s;
+        }
+
+        .page-num {
+            font-family: var(--font-serif);
+            font-size: 13px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .grid-page h3 {
+            font-family: var(--font-serif);
+            font-size: clamp(18px, 1.5vw, 20px);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .grid-page p {
+            color: var(--text-secondary);
+            font-size: clamp(14px, 1vw, 15px);
+            text-align: justify;
+        }
+
+        /* ==========================================================================
+           TIMELINE SECTION
+           ========================================================================== */
+        .timeline-section {
+            padding: 60px 0;
+            background: var(--bg-book-cream);
+            width: 100%;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px 0;
+            position: relative;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            margin-left: 50%;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            text-align: left;
+            padding-left: 30px;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            text-align: right;
+            padding-right: 30px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: var(--primary);
+            border: 3px solid var(--bg-pure);
+            border-radius: 50%;
+            top: 25px;
+            z-index: 2;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -7px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -7px;
+        }
+
+        .timeline-content {
+            background: var(--bg-pure);
+            padding: 18px 22px;
+            border-radius: 12px;
+            border: 1px solid var(--border-line);
+            box-shadow: var(--shadow);
+            max-width: 380px;
+            transition: var(--transition-book);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .timeline-date {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timeline-content h4 {
+            font-family: var(--font-serif);
+            font-size: 17px;
+            margin: 6px 0;
+        }
+
+        .timeline-content p {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin: 0;
+        }
+
+        /* ==========================================================================
+           STATS SECTION
+           ========================================================================== */
+        .stats-section {
+            padding: 60px 0;
+            width: 100%;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+            padding: 0 5px;
+        }
+
+        .stat-item {
+            padding: 25px 15px;
+            border-radius: 12px;
+            border: 1px solid var(--border-line);
+            background: var(--bg-pure);
+            transition: var(--transition-book);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .stat-number {
+            font-family: var(--font-serif);
+            font-size: clamp(30px, 3vw, 42px);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: clamp(12px, 0.9vw, 14px);
+            font-weight: 500;
+            margin-top: 6px;
+            display: block;
+        }
+
+        /* ==========================================================================
+           TESTIMONIALS SECTION
+           ========================================================================== */
+        .testimonials-section {
+            padding: 60px 0;
+            background: var(--bg-book-cream);
+            width: 100%;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 0 5px;
+        }
+
+        .testimonial-card {
+            background: var(--bg-pure);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--border-line);
+            box-shadow: var(--shadow);
+            transition: var(--transition-book);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-card .quote-icon {
+            font-size: 28px;
+            color: var(--primary);
+            opacity: 0.2;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-card p {
+            font-size: clamp(14px, 1vw, 16px);
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+        }
+
+        .testimonial-card cite {
+            font-style: normal;
+            font-weight: 600;
+            color: var(--text-editorial);
+            font-size: 13px;
+        }
+
+        .testimonial-card .role {
+            color: var(--text-secondary);
+            font-size: 11px;
+            display: block;
+        }
+
+        /* ==========================================================================
+           FAQ SECTION
+           ========================================================================== */
+        .faq-section {
+            padding: 60px 0;
+            width: 100%;
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0 5px;
+        }
+
+        .faq-item {
+            border: 1px solid var(--border-line);
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--bg-pure);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 16px 20px;
+            background: none;
+            border: none;
+            font-family: var(--font-sans);
+            font-size: clamp(14px, 1vw, 16px);
+            font-weight: 600;
+            color: var(--text-editorial);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition-book);
+            text-align: left;
+            gap: 10px;
+        }
+
+        .faq-question:hover {
+            color: var(--primary);
+        }
+
+        .faq-question .icon {
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-question .icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 20px 16px 20px;
+        }
+
+        .faq-answer p {
+            color: var(--text-secondary);
+            font-size: clamp(14px, 1vw, 15px);
+            margin: 0;
+        }
+
+        /* ==========================================================================
+           NEWSLETTER SECTION
+           ========================================================================== */
+        .newsletter-section {
+            padding: 60px 0;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            width: 100%;
+        }
+
+        .newsletter-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .newsletter-content h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(24px, 2.5vw, 32px);
+            margin-bottom: 10px;
+        }
+
+        .newsletter-content p {
+            opacity: 0.8;
+            margin-bottom: 25px;
+            font-size: clamp(14px, 1vw, 16px);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 180px;
+            padding: 12px 18px;
+            border-radius: 8px;
+            border: none;
+            font-size: 14px;
+            font-family: var(--font-sans);
+        }
+
+        .newsletter-form input:focus {
+            outline: 2px solid var(--accent);
+        }
+
+        .newsletter-form .btn {
+            background: var(--accent);
+            color: var(--text-editorial);
+        }
+
+        .newsletter-form .btn:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================================================
+           EPILOGUE - TABLE IDENTITÉ
+           ========================================================================== */
+        .epilogue-section {
+            padding: 60px 0;
+            width: 100%;
+        }
+
+        .epilogue-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--bg-book-cream);
+            padding: 30px;
+            border: 1px solid var(--border-line);
+            border-radius: 12px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+            overflow-x: auto;
+        }
+
+        .epilogue-box.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .epilogue-box h3 {
+            font-family: var(--font-serif);
+            font-size: clamp(18px, 1.5vw, 20px);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .identity-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 300px;
+        }
+
+        .identity-table th,
+        .identity-table td {
+            padding: 12px 12px;
+            font-size: clamp(12px, 0.9vw, 14px);
+            text-align: left;
+            border-bottom: 1px solid var(--border-line);
+        }
+
+        .identity-table th {
+            color: var(--text-secondary);
+            font-weight: 500;
+            width: 35%;
+        }
+
+        .identity-table td {
+            font-weight: 600;
+        }
+
+        .identity-table tr:last-child th,
+        .identity-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        .footer {
+            border-top: 1px solid var(--border-line);
+            padding: 40px 0;
+            background: var(--bg-pure);
+            width: 100%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 0 10px;
+        }
+
+        .footer-logo {
+            height: 28px;
+            margin-bottom: 6px;
+            transition: var(--transition-book);
+        }
+
+        .footer-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        .footer-info p {
+            color: var(--text-secondary);
+            font-size: 12px;
+        }
+
+        /* ==========================================================================
+           RESPONSIVE - MOBILE FIRST
+           ========================================================================== */
+        @media (max-width: 992px) {
+            .biography-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .biography-visual {
+                justify-content: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                justify-content: flex-start;
+                padding-left: 45px;
+            }
+
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+            }
+
+            .timeline-item:nth-child(even) .timeline-content {
+                padding-left: 0;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content {
+                text-align: left;
+                padding-right: 0;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-dot {
+                right: auto;
+                left: -7px;
+            }
+
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: -7px;
+            }
+
+            .nav-menu a {
+                margin: 0 5px;
+                font-size: 11px;
+            }
+
+            .btn {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+
+            .btn-primary .icon {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .mobile-menu.active {
+                display: flex;
+            }
+
+            .hero-book-section {
+                padding-top: 80px;
+                min-height: 90vh;
+            }
+
+            .hero-book-section h1 {
+                font-size: clamp(26px, 6vw, 34px);
+            }
+
+            .book-lead {
+                font-size: 15px;
+                padding: 0 5px;
+            }
+
+            .chapter-header h2 {
+                font-size: clamp(22px, 4vw, 28px);
+            }
+
+            .author-img {
+                height: 500px;
+            }
+
+            .epilogue-box {
+                padding: 20px;
+                margin: 0 5px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .stat-item {
+                padding: 18px 12px;
+            }
+
+            .stat-number {
+                font-size: clamp(26px, 5vw, 32px);
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input {
+                width: 100%;
+                min-width: unset;
+            }
+
+            .social-channels {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .social-link-badge {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+
+            .book-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-content {
+                max-width: 100%;
+            }
+
+            .identity-table {
+                min-width: 250px;
+            }
+
+            .identity-table th,
+            .identity-table td {
+                padding: 10px 8px;
+                font-size: 12px;
+            }
+
+            .manifesto-box blockquote {
+                font-size: clamp(18px, 3vw, 22px);
+                padding: 16px;
+            }
+
+            .chapter-section {
+                padding: 40px 0;
+            }
+
+            .timeline-section,
+            .stats-section,
+            .testimonials-section,
+            .faq-section,
+            .newsletter-section,
+            .epilogue-section {
+                padding: 40px 0;
+            }
+
+            .container {
+                width: 95%;
+                padding: 0 5px;
+            }
+
+            .nav-container {
+                width: 98%;
+                padding: 0 5px;
+            }
+
+            .dark-toggle {
+                width: 32px;
+                height: 32px;
+            }
+
+            .btn-primary {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+
+            .btn-primary .icon {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .stat-item {
+                padding: 15px 10px;
+            }
+
+            .stat-number {
+                font-size: 24px;
+            }
+
+            .stat-label {
+                font-size: 11px;
+            }
+
+            .book-badge {
+                font-size: 11px;
+                padding: 4px 12px;
+            }
+
+            .hero-book-section h1 {
+                font-size: 24px;
+            }
+
+            .book-lead {
+                font-size: 14px;
+            }
+
+            .chapter-header h2 {
+                font-size: 20px;
+            }
+
+            .grid-page h3 {
+                font-size: 17px;
+            }
+
+            .faq-question {
+                font-size: 14px;
+                padding: 14px 16px;
+            }
+
+            .faq-answer p {
+                font-size: 13px;
+            }
+
+            .epilogue-box {
+                padding: 15px;
+                margin: 0 5px;
+            }
+
+            .identity-table th,
+            .identity-table td {
+                padding: 8px 6px;
+                font-size: 11px;
+            }
+
+            .timeline-content {
+                padding: 14px 16px;
+            }
+
+            .timeline-content h4 {
+                font-size: 15px;
+            }
+
+            .timeline-content p {
+                font-size: 12px;
+            }
+
+            .testimonial-card {
+                padding: 18px;
+            }
+
+            .testimonial-card p {
+                font-size: 14px;
+            }
+
+            .newsletter-content h2 {
+                font-size: 22px;
+            }
+
+            .newsletter-form input {
+                padding: 10px 14px;
+                font-size: 13px;
+            }
+
+            .btn {
+                font-size: 11px;
+                padding: 6px 12px;
+            }
+
+            .author-img {
+                height: 500px;
+            }
+
+            .author-card {
+                max-width: 100%;
+                padding: 12px;
+            }
+        }
+
+        /* Correction pour éviter les débordements */
+        img,
+        svg,
+        video,
+        iframe {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Empêcher le défilement horizontal */
+        .no-overflow {
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barre de Progression de Lecture -->
+    <div class="reading-progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Barre de Navigation -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">
+                    <img src="https://ukbekfcjfcjcqrpxfpmq.supabase.co/storage/v1/object/public/logo%20luvia/Luvia%20Place%20logo%20fond%20bleu.png" alt="Luvia Place Logo">
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#prologue">Prologue</a>
+                <a href="#chapitre1">Ch. I</a>
+                <a href="#chapitre2">Ch. II</a>
+                <a href="#chapitre3">Ch. III</a>
+                <a href="#chapitre4">Ch. IV</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+
+            <div class="nav-right">
+                <button class="dark-toggle" id="darkToggle" aria-label="Mode sombre">
+                    <span class="icon icon-sm" id="darkIcon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </span>
+                </button>
+                <a href="https://luviaplace.com" target="_blank" class="btn btn-primary">
+                    <span class="icon icon-sm">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </span>
+                    App
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Mobile -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#prologue">Prologue</a>
+        <a href="#chapitre1">Chapitre I</a>
+        <a href="#chapitre2">Chapitre II</a>
+        <a href="#chapitre3">Chapitre III</a>
+        <a href="#chapitre4">Chapitre IV</a>
+        <a href="#timeline">Chronologie</a>
+        <a href="#faq">FAQ</a>
+    </div>
+
+    <!-- PROLOGUE -->
+    <section id="prologue" class="hero-book-section">
+        <div class="floating-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+
+        <div class="book-container">
+            <span class="book-badge">
+                <span class="icon icon-sm">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                    </svg>
+                </span>
+                Édition Spéciale — La Biographie d'une Révolution
+            </span>
+            <h1>Luvia Place, ou l'audace d'une <span class="text-gradient">jeunesse qui écrit son histoire</span>.</h1>
+            <p class="book-lead">Ceci n'est pas simplement une plateforme numérique. C'est le carnet de bord d'une jeune start-up kinoise lancée en 2026, née pour faire basculer le secteur du voyage congolais dans l'ère d'Internet. La biographie vivante d'une ambition gravée pour l'Afrique, et par l'Afrique.</p>
+
+            <div class="social-channels">
+                <a href="https://www.instagram.com/luviaplace" target="_blank" class="social-link-badge">
+                    <span class="icon icon-sm">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <circle cx="12" cy="12" r="5"/>
+                            <circle cx="17.5" cy="6.5" r="1.5"/>
+                        </svg>
+                    </span>
+                    Instagram
+                </a>
+                <a href="https://www.linkedin.com/company/127894230/" target="_blank" class="social-link-badge">
+                    <span class="icon icon-sm">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </span>
+                    LinkedIn
+                </a>
+            </div>
+
+            <div class="scroll-indicator">
+                <a href="#chapitre1" class="btn-scroll-down">
+                    Tourner la page
+                    <span class="icon icon-sm">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 5v14M5 12l7 7 7-7"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPITRE I -->
+    <section id="chapitre1" class="chapter-section">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-number">Chapitre I</span>
+                <h2>Le Constat du Développeur Curieux</h2>
+            </div>
+            <div class="biography-layout">
+                <div class="biography-text">
+                    <p class="dropcap">L</p>
+                    <p>'histoire de Luvia Place commence par la curiosité d'un esprit technologique. À l'origine de cette œuvre se trouve <strong>Christopher Dikesa Musumary</strong>, un développeur passionné travaillant alors au cœur du groupe <em>Satguru</em>, l'un des leaders incontestés du voyage et du tourisme sur le continent africain.</p>
+                    <p>Au fil des lignes de code, Christopher fait un constat flagrant : la quasi-totalité des partenaires se limitent à une présence physique. Le continent africain souffre d'un manque cruel de souveraineté numérique dans ce secteur vital, laissant ses flux à la merci d'infrastructures étrangères.</p>
+                    <p>Animé par le désir d'innover pour les siens, il esquisse les premiers paragraphes. L'aventure commence sous le nom de <strong>Nomady Voyage</strong>, mûrit pour devenir <strong>Terra Voyage</strong>, avant de trouver son identité : <strong>Luvia Travel</strong> — contraction poétique de <em>Love Air Travel</em>.</p>
+                </div>
+                <div class="biography-visual">
+                    <div class="author-card">
+                        <img src="https://ukbekfcjfcjcqrpxfpmq.supabase.co/storage/v1/object/public/logo%20luvia/WhatsApp%20Image%202026-06-22%20at%2014.21.06%20(1).jpeg" alt="Christopher Dikesa Musumary" class="author-img">
+                        <div class="author-meta">
+                            <h4>Christopher D. Musumary</h4>
+                            <p>Développeur & Fondateur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPITRE II -->
+    <section id="chapitre2" class="chapter-section alternate-bg">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-number">Chapitre II</span>
+                <h2>La Métamorphose du Prototype</h2>
+            </div>
+            <div class="biography-layout">
+                <div class="biography-text">
+                    <p>Dans sa phase embryonnaire, <strong>Luvia Place</strong> n'était pensée que comme un fragment : une plateforme uniquement réservée aux hébergements. Mais face à l'immensité du défi en République Démocratique du Congo, le fondateur réalise qu'éparpiller ses efforts rendrait la tâche titanesque.</p>
+                    <p>C'est ainsi qu'en avril 2026, une décision architecturale majeure réécrit le destin du projet. Luvia Place se transforme pour devenir la grande vitrine officielle de <strong>Luvia Travel</strong>. En fusionnant les deux piliers du voyage moderne — <strong>les vols et les hôtels</strong> — la plateforme simplifie l'expérience et rassemble ses forces sous une seule bannière.</p>
+                </div>
+                <div class="biography-text">
+                    <div class="manifesto-box" style="max-width:100%;">
+                        <blockquote style="font-size:clamp(18px,2vw,22px); padding:16px; border-left:4px solid var(--primary);">
+                            "Séparer le voyage, c'était fragmenter l'expérience. Nous avons choisi d'unifier les vols et les hôtels pour offrir un horizon sans couture."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPITRE III -->
+    <section id="chapitre3" class="chapter-section">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-number">Chapitre III</span>
+                <h2>L'Alliance pour la Souveraineté</h2>
+            </div>
+
+            <div class="manifesto-box">
+                <p class="chapter-intro">Bâtir un empire numérique en RDC exigeait des fondations technologiques imprenables. Luvia Travel a scellé une alliance stratégique avec <strong>Nuitee Limited</strong>, l'un des tenants mondiaux de l'intégration de solutions de voyage.</p>
+                <p class="manifesto-body">Après des mois de tests en coulisses, la marque s'est dressée comme la seule véritable alternative africaine face aux géants occidentaux tels que <em>Booking.com</em> ou <em>Expedia</em>.</p>
+            </div>
+
+            <div class="book-grid">
+                <div class="grid-page">
+                    <div class="page-num">01</div>
+                    <h3>
+                        <span class="icon icon-sm" style="color:var(--primary);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                                <polyline points="17 21 17 13 7 13 7 21"/>
+                                <polyline points="7 3 7 8 15 8"/>
+                            </svg>
+                        </span>
+                        My Bookings
+                    </h3>
+                    <p>L'espace centralisé où le voyageur orchestre ses vols et ses nuits en toute liberté, sans la froideur des algorithmes occidentaux.</p>
+                </div>
+                <div class="grid-page">
+                    <div class="page-num">02</div>
+                    <h3>
+                        <span class="icon icon-sm" style="color:var(--primary);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </span>
+                        Luvia Rewards
+                    </h3>
+                    <p>Un système de fidélité pensé pour valoriser la récurrence de la confiance, transformant chaque kilomètre en privilège.</p>
+                </div>
+                <div class="grid-page">
+                    <div class="page-num">03</div>
+                    <h3>
+                        <span class="icon icon-sm" style="color:var(--primary);">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </span>
+                        Parrainage Natif
+                    </h3>
+                    <p>Parce que le voyage africain repose sur la communauté, notre système permet de partager l'expérience de bouche-à-oreille numérique.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHAPITRE IV -->
+    <section id="chapitre4" class="chapter-section alternate-bg">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-number">Chapitre IV</span>
+                <h2>L'Éveil d'un Pionnier</h2>
+            </div>
+            <div class="biography-layout">
+                <div class="biography-text">
+                    <p>Un mois à peine après son lancement officiel en 2026, Luvia Place trace son chemin à travers la jungle du secteur touristique. Ce petit projet kinois nourrit désormais une ambition continentale : devenir le pionnier incontournable du voyage numérique en <strong>RDC</strong>, en <strong>Afrique Centrale</strong>, puis sur l'ensemble du <strong>continent</strong>.</p>
+                    <p>Qu'il s'agisse de réserver une suite à Paris ou Milan, ou de structurer des parcours au cœur de <strong>Kinshasa</strong>, la start-up impose une nouvelle ère de la tech africaine.</p>
+                </div>
+                <div class="biography-text">
+                    <div class="event-capsule" style="background:var(--bg-pure); border:1px solid var(--border-line); padding:25px; border-radius:12px;">
+                        <h4 style="font-family:var(--font-serif); font-size:clamp(17px,1.3vw,18px); margin-bottom:12px;">Le Premier Chapitre d'un Mythe</h4>
+                        <p style="font-size:clamp(13px,1vw,14.5px); color:var(--text-secondary); margin-bottom:20px;">Luvia Travel, c'est d'abord et avant tout le désir d'innover. Suivez nos premiers pas, nos victoires et l'évolution de notre tech sur nos canaux officiels.</p>
+                        <div class="capsule-actions" style="display:flex; gap:12px; flex-wrap:wrap;">
+                            <a href="https://www.instagram.com/luviaplace" target="_blank" class="btn-sm-social" style="display:inline-flex; align-items:center; gap:6px; padding:8px 16px; border:1px solid var(--border-line); border-radius:8px; text-decoration:none; color:var(--text-editorial); font-size:12px; font-weight:500; transition:var(--transition-book);">
+                                <span class="icon icon-sm">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                        <circle cx="12" cy="12" r="5"/>
+                                        <circle cx="17.5" cy="6.5" r="1.5"/>
+                                    </svg>
+                                </span>
+                                Instagram
+                            </a>
+                            <a href="https://www.linkedin.com/company/127894230/" target="_blank" class="btn-sm-social" style="display:inline-flex; align-items:center; gap:6px; padding:8px 16px; border:1px solid var(--border-line); border-radius:8px; text-decoration:none; color:var(--text-editorial); font-size:12px; font-weight:500; transition:var(--transition-book);">
+                                <span class="icon icon-sm">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                        <rect x="2" y="9" width="4" height="12"/>
+                                        <circle cx="4" cy="4" r="2"/>
+                                    </svg>
+                                </span>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-number">Chronologie</span>
+                <h2>L'Évolution de Luvia Place</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Janvier 2026</span>
+                        <h4>Naissance de l'idée</h4>
+                        <p>Christopher esquisse les premières lignes de code.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Avril 2026</span>
+                        <h4>Fusion stratégique</h4>
+                        <p>Luvia Place devient la vitrine de Luvia Travel.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Mai 2026</span>
+                        <h4>Lancement officiel</h4>
+                        <p>La plateforme est accessible au public.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2026 - Avenir</span>
+                        <h4>Expansion continentale</h4>
+                        <p>Devenir le leader du voyage numérique en Afrique.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- STATISTIQUES -->
+<section class="stats-section">
+    <div class="container">
+        <div class="chapter-header">
+            <span class="chapter-number">En chiffres</span>
+            <h2>L'Impact en Quelques Données</h2>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number" data-count="2026">0</span>
+                <span class="stat-label">Année de lancement</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="50">0</span>
+                <span class="stat-label">Partenaires hôteliers</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="10" data-prefix="+">0</span>
+                <span class="stat-label">Pays connectés</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-count="100">0</span>
+                <span class="stat-label">% Africain</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- TÉMOIGNAGES -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-number">Ils parlent de nous</span>
+                <h2>Ce que disent nos partenaires</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p>Une véritable révolution dans le secteur du voyage en RDC. Luvia Place apporte une solution moderne et africaine.</p>
+                    <cite>Jean-Pierre K.</cite>
+                    <span class="role">Expert en tourisme</span>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p>L'interface est intuitive, les fonctionnalités sont complètes. C'est exactement ce qu'il manquait au paysage numérique congolais.</p>
+                    <cite>Marie-Louise M.</cite>
+                    <span class="role">Partenaire technologique</span>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p>Une équipe passionnée et visionnaire. Luvia Place incarne l'avenir du voyage digital en Afrique.</p>
+                    <cite>David N.</cite>
+                    <span class="role">Investisseur</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-number">Questions fréquentes</span>
+                <h2>Tout savoir sur Luvia Place</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item active">
+                    <button class="faq-question">
+                        Qu'est-ce que Luvia Place ?
+                        <span class="icon icon-sm">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Luvia Place est la plateforme digitale de Luvia Travel, une OTA nouvelle génération qui permet de réserver des vols et des hôtels en un seul endroit.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Qui a fondé Luvia Place ?
+                        <span class="icon icon-sm">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Luvia Place a été fondée par Christopher Dikesa Musumary, un développeur passionné originaire de Kinshasa, RDC.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Comment se différencie-t-elle ?
+                        <span class="icon icon-sm">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Luvia Place est une alternative africaine aux géants occidentaux comme Booking.com ou Expedia.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Où puis-je utiliser Luvia Place ?
+                        <span class="icon icon-sm">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="6 9 12 15 18 9"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>La plateforme est accessible sur luviaplace.com, avec des offres couvrant Paris, Londres, Kinshasa et bien d'autres destinations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Restez informés</h2>
+                <p>Recevez les actualités de Luvia Place et soyez les premiers à découvrir nos nouvelles fonctionnalités.</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn">S'abonner</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- EPILOGUE -->
+    <section class="epilogue-section">
+        <div class="container">
+            <div class="epilogue-box">
+                <h3>Index & Fiche d'Identité Biographique</h3>
+                <div class="identity-table-wrapper">
+                    <table class="identity-table">
+                        <tr>
+                            <th>Œuvre Mère</th>
+                            <td>Luvia Travel (<em>Love Air Travel</em>)</td>
+                        </tr>
+                        <tr>
+                            <th>Vitrine Numérique</th>
+                            <td>Luvia Place (Vols & Hôtels)</td>
+                        </tr>
+                        <tr>
+                            <th>Fondateur</th>
+                            <td>Christopher Dikesa Musumary</td>
+                        </tr>
+                        <tr>
+                            <th>Allié Technologique</th>
+                            <td>Nuitee Limited</td>
+                        </tr>
+                        <tr>
+                            <th>Anciens Noms</th>
+                            <td>Nomady Voyage / Terra Voyage</td>
+                        </tr>
+                        <tr>
+                            <th>Origine</th>
+                            <td>Kinshasa, RDC — 2026</td>
+                        </tr>
+                        <tr>
+                            <th>Alternative à</th>
+                            <td>Booking.com / Expedia</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="https://ukbekfcjfcjcqrpxfpmq.supabase.co/storage/v1/object/public/logo%20luvia/Luvia%20Place%20logo%20fond%20bleu.png" alt="Luvia Place" class="footer-logo">
+                <p>Écrivons ensemble les futurs chapitres du voyage connecté africain.</p>
+            </div>
+            <div class="footer-info">
+                <p>&copy; 2026 Luvia Travel. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // ============================================================
+        // 1. NAVBAR SCROLL
+        // ============================================================
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ============================================================
+        // 2. BARRE DE PROGRESSION
+        // ============================================================
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        });
+
+        // ============================================================
+        // 3. OBSERVER ANIMATIONS
+        // ============================================================
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    const children = entry.target.querySelectorAll('.biography-text, .biography-visual, .grid-page, .horizons-content, .event-capsule, .manifesto-box');
+                    children.forEach(child => {
+                        child.classList.add('visible');
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.chapter-header, .biography-text, .biography-visual, .grid-page, .manifesto-box, .epilogue-box').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ============================================================
+        // 4. COMPTEURS ANIMÉS
+        // ============================================================
+      function animateCounter(element) {
+    const target = parseInt(element.dataset.count);
+    const prefix = element.dataset.prefix || '';
+    const suffix = element.dataset.suffix || '';
+    const duration = 2000;
+    const start = performance.now();
+
+    function update(currentTime) {
+        const elapsed = currentTime - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const value = Math.floor(progress * target);
+        element.textContent = prefix + value + suffix;
+
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        } else {
+            element.textContent = prefix + target + suffix;
+        }
+    }
+    requestAnimationFrame(update);
+}
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stat-number');
+                    counters.forEach(counter => {
+                        if (!counter.dataset.animated) {
+                            counter.dataset.animated = 'true';
+                            animateCounter(counter);
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelector('.stats-section') && counterObserver.observe(document.querySelector('.stats-section'));
+
+        // ============================================================
+        // 5. FAQ ACCORDÉON
+        // ============================================================
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+
+                document.querySelectorAll('.faq-item').forEach(other => {
+                    if (other !== item) other.classList.remove('active');
+                });
+
+                item.classList.toggle('active');
+            });
+        });
+
+        // ============================================================
+        // 6. DARK MODE
+        // ============================================================
+        const darkToggle = document.getElementById('darkToggle');
+        const darkIcon = document.getElementById('darkIcon');
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+            updateDarkIcon();
+        }
+
+        darkToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+            localStorage.setItem('theme', theme);
+            updateDarkIcon();
+        });
+
+        function updateDarkIcon() {
+            const isDark = document.body.classList.contains('dark-mode');
+            darkIcon.innerHTML = isDark ?
+                `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>` :
+                `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>`;
+        }
+
+        // ============================================================
+        // 7. HAMBURGER MENU
+        // ============================================================
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // ============================================================
+        // 8. NEWSLETTER
+        // ============================================================
+        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+            if (email) {
+                alert('Merci pour votre inscription ! Vous recevrez bientôt nos actualités.');
+                this.querySelector('input[type="email"]').value = '';
+            }
+        });
+
+        // ============================================================
+        // 9. PARTICULES INTERACTIVES
+        // ============================================================
+        document.querySelector('.hero-book-section').addEventListener('mousemove', (e) => {
+            const particles = document.querySelectorAll('.particle');
+            const x = (e.clientX / window.innerWidth - 0.5) * 20;
+            const y = (e.clientY / window.innerHeight - 0.5) * 20;
+            particles.forEach((particle, index) => {
+                const speed = 1 + index * 0.5;
+                particle.style.transform = `translate(${x * speed}px, ${y * speed}px) scale(1)`;
+            });
+        });
+
+        // ============================================================
+        // 10. SMOOTH SCROLL
+        // ============================================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
