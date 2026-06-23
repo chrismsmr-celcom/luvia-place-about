@@ -387,7 +387,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             position: relative;
             padding-top: 100px;
             padding-bottom: 40px;
-            background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%);
+            background: linear-gradient(122deg, rgba(0, 82, 204, 0.13) 0%, #ffffff 100%);
             overflow: hidden;
             width: 100%;
         }
@@ -1157,13 +1157,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         .newsletter-form .btn {
-            background: var(--accent);
-            color: var(--text-editorial);
+            background: #0f172a;
+            color: #ffffff;
         }
 
         .newsletter-form .btn:hover {
             background: white;
+            color: var(--text-editorial);
             transform: translateY(-2px);
+        }
+
+        /* Dark mode pour la newsletter */
+        body.dark-mode .newsletter-form .btn {
+            background: var(--bg-book-cream);
+            color: var(--text-editorial);
+        }
+
+        body.dark-mode .newsletter-form .btn:hover {
+            background: var(--text-editorial);
+            color: var(--bg-pure);
         }
 
         /* ==========================================================================
@@ -1229,44 +1241,336 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }
 
         /* ==========================================================================
-           FOOTER
+           SECTION PARTENAIRES
            ========================================================================== */
-        .footer {
-            border-top: 1px solid var(--border-line);
-            padding: 40px 0;
-            background: var(--bg-pure);
+        .partners-section {
+            padding: 80px 0;
+            background: var(--bg-book-cream);
             width: 100%;
         }
 
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            padding: 0 10px;
+        body.dark-mode .partners-section {
+            background: var(--bg-book-cream);
         }
 
-        .footer-logo {
-            height: 28px;
-            margin-bottom: 6px;
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            padding: 0 5px;
+        }
+
+        .partner-card {
+            background: var(--bg-pure);
+            border: 1px solid var(--border-line);
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-align: center;
+            transition: var(--transition-book);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .partner-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 82, 204, 0.08);
+            border-color: var(--primary);
+        }
+
+        .partner-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(0, 82, 204, 0.03), rgba(0, 210, 196, 0.03));
+        }
+
+        .partner-card.featured .partner-badge {
+            background: var(--primary);
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 3px 12px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .partner-logo {
+            width: 100%;
+            max-width: 140px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(0.1);
             transition: var(--transition-book);
         }
 
-        .footer-logo:hover {
+        .partner-card:hover .partner-logo img {
+            filter: grayscale(0);
             transform: scale(1.05);
         }
 
-        .footer-brand p {
-            color: var(--text-secondary);
-            font-size: 12px;
+        .partner-info h4 {
+            font-family: var(--font-serif);
+            font-size: 16px;
+            margin-bottom: 4px;
+            color: var(--text-editorial);
         }
 
-        .footer-info p {
+        .partner-info p {
+            font-size: 13px;
             color: var(--text-secondary);
-            font-size: 12px;
+            margin: 0;
         }
 
+        /* ==========================================================================
+       FOOTER PROFESSIONNEL
+       ========================================================================== */
+    .footer {
+        background: var(--bg-pure);
+        border-top: 1px solid var(--border-line);
+        padding: 60px 0 0 0;
+        width: 100%;
+    }
+
+    body.dark-mode .footer {
+        /* Note : Assurez-vous que cette variable est bien une couleur sombre */
+        background: var(--bg-book-cream); 
+    }
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1.2fr;
+        gap: 40px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid var(--border-line);
+    }
+
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .footer-logo {
+    height: 45px;
+    width: max-content; /* S'adapte à la vraie largeur de l'image */
+    max-width: 100%;    /* Évite que le logo ne dépasse sur petit écran */
+    object-fit: contain; /* Force le respect des proportions d'origine */
+    margin-bottom: 5px;
+    transition: var(--transition-book);
+}
+
+    .footer-logo:hover {
+        transform: scale(1.05);
+    }
+
+    .footer-description {
+        font-size: 14px;
+        color: var(--text-secondary);
+        line-height: 1.6;
+        max-width: 300px;
+    }
+
+    .footer-social {
+        display: flex;
+        gap: 12px;
+        margin-top: 5px;
+    }
+
+    .footer-social a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid var(--border-line);
+        color: var(--text-secondary);
+        transition: var(--transition-book);
+        text-decoration: none;
+    }
+
+    .footer-social a:hover {
+        border-color: var(--primary);
+        color: var(--primary);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 82, 204, 0.1);
+    }
+
+    .footer-social a .icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .footer-title {
+        font-family: var(--font-serif);
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--text-editorial);
+        margin-bottom: 5px;
+    }
+
+    .footer-links,
+    .footer-contact {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .footer-links li a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 14px;
+        transition: var(--transition-book);
+        display: inline-block;
+    }
+
+    .footer-links li a:hover {
+        color: var(--primary);
+        transform: translateX(5px);
+    }
+
+    .footer-contact li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 14px;
+        color: var(--text-secondary);
+        line-height: 1.5;
+    }
+
+    .footer-contact li .icon {
+        flex-shrink: 0;
+        margin-top: 2px;
+        color: var(--primary);
+    }
+
+    .footer-contact li a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: var(--transition-book);
+    }
+
+    .footer-contact li a:hover {
+        color: var(--primary);
+    }
+
+    .footer-bottom {
+        padding: 20px 0;
+    }
+
+    .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .footer-copyright {
+        font-size: 13px;
+        color: var(--text-secondary);
+    }
+
+    .footer-legal {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        font-size: 13px;
+    }
+
+    .footer-legal a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: var(--transition-book);
+    }
+
+    .footer-legal a:hover {
+        color: var(--primary);
+    }
+
+    .footer-legal .separator {
+        color: var(--border-line);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE - FOOTER
+       ========================================================================== */
+    @media (max-width: 992px) {
+        .footer-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .footer-description {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .footer {
+            padding: 40px 0 0 0;
+        }
+        
+        .footer-grid {
+            grid-template-columns: 1fr;
+            gap: 25px;
+            padding-bottom: 30px;
+        }
+        
+        .footer-bottom-content {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .footer-legal {
+            justify-content: center;
+        }
+        
+        .footer-logo {
+            height: 40px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .footer-social a {
+            width: 36px;
+            height: 36px;
+        }
+        
+        .footer-legal {
+            font-size: 12px;
+            gap: 5px;
+        }
+        
+        .footer-legal .separator {
+            display: inline;
+        }
+    }
         /* ==========================================================================
            RESPONSIVE - MOBILE FIRST
            ========================================================================== */
@@ -1330,6 +1634,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .btn-primary .icon {
                 display: none;
             }
+
+            .partners-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1370,11 +1679,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             .epilogue-box {
                 padding: 20px;
                 margin: 0 5px;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
             }
 
             .stats-grid {
@@ -1473,6 +1777,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
             .btn-primary .icon {
                 display: none;
+            }
+
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .partner-card {
+                padding: 20px 15px;
+            }
+
+            .partner-logo {
+                height: 60px;
+                max-width: 100px;
+            }
+
+            .partner-info h4 {
+                font-size: 14px;
+            }
+
+            .partner-info p {
+                font-size: 12px;
             }
         }
 
@@ -1577,6 +1903,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 max-width: 100%;
                 padding: 12px;
             }
+
+            .partners-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+
+            .partner-card {
+                padding: 15px 12px;
+            }
+
+            .partner-logo {
+                height: 50px;
+                max-width: 80px;
+            }
+
+            .partner-info h4 {
+                font-size: 13px;
+            }
+
+            .partner-info p {
+                font-size: 11px;
+            }
         }
 
         /* Correction pour éviter les débordements */
@@ -1644,7 +1992,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <path d="M2 12l10 5 10-5"/>
                         </svg>
                     </span>
-                    App
+                    luviaplace.com
                 </a>
             </div>
         </div>
@@ -1914,33 +2262,127 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </section>
 
-<!-- STATISTIQUES -->
-<section class="stats-section">
-    <div class="container">
-        <div class="chapter-header">
-            <span class="chapter-number">En chiffres</span>
-            <h2>L'Impact en Quelques Données</h2>
+    <!-- STATISTIQUES -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-number">En chiffres</span>
+                <h2>L'Impact en Quelques Données</h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="2026">0</span>
+                    <span class="stat-label">Année de lancement</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="50">0</span>
+                    <span class="stat-label">Partenaires hôteliers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="10" data-prefix="+">0</span>
+                    <span class="stat-label">Pays connectés</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="100">0</span>
+                    <span class="stat-label">% Africain</span>
+                </div>
+            </div>
         </div>
-        <div class="stats-grid">
-            <div class="stat-item">
-                <span class="stat-number" data-count="2026">0</span>
-                <span class="stat-label">Année de lancement</span>
+    </section>
+
+    <!-- SECTION PARTENAIRES -->
+    <section class="partners-section">
+        <div class="container">
+            <div class="chapter-header">
+                <span class="chapter-number">Nos Alliés</span>
+                <h2>Des Partenaires de Confiance</h2>
+                <p style="color: var(--text-secondary); font-size: 16px; max-width: 600px; margin: 10px auto 0;">
+                    Nous collaborons avec les meilleurs acteurs du secteur pour vous offrir une expérience de voyage exceptionnelle.
+                </p>
             </div>
-            <div class="stat-item">
-                <span class="stat-number" data-count="50">0</span>
-                <span class="stat-label">Partenaires hôteliers</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-count="10" data-prefix="+">0</span>
-                <span class="stat-label">Pays connectés</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-count="100">0</span>
-                <span class="stat-label">% Africain</span>
+            
+            <div class="partners-grid">
+                <!-- GetYourGuide -->
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/GetYourGuide_logo.svg/960px-GetYourGuide_logo.svg.png" 
+                             alt="GetYourGuide" 
+                             loading="lazy">
+                    </div>
+                    <div class="partner-info">
+                        <h4>GetYourGuide</h4>
+                        <p>Activités et visites guidées</p>
+                    </div>
+                </div>
+
+                <!-- Viator -->
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <img src="https://images.seeklogo.com/logo-png/45/1/viator-logo-png_seeklogo-451605.png" 
+                             alt="Viator" 
+                             loading="lazy">
+                    </div>
+                    <div class="partner-info">
+                        <h4>Viator</h4>
+                        <p>Expériences de voyage</p>
+                    </div>
+                </div>
+
+                <!-- Hare Krishna Travels -->
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPPrxs_LSVdVCPJW0f_dm89ijjdhMUWmBboZJ9DKdUsg&s" 
+                             alt="Hare Krishna Travels" 
+                             loading="lazy">
+                    </div>
+                    <div class="partner-info">
+                        <h4>Hare Krishna Travels</h4>
+                        <p>compagnie de gestion de voyage</p>
+                    </div>
+                </div>
+
+                <!-- Nuitee Limited -->
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ83doSTF1py8Ml2w4sgXERNmFRBneqbHMjxXLAjbGMIeqR9M9oI1eO6nU&s=10" 
+                             alt="Nuitee Limited" 
+                             loading="lazy">
+                    </div>
+                    <div class="partner-info">
+                        <h4>Nuitee Limited</h4>
+                        <p>Solutions d'hébergement</p>
+                    </div>
+                </div>
+
+                <!-- Duffel -->
+                <div class="partner-card">
+                    <div class="partner-logo">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4FgHPOSOXTzsXghTgSewwDBn82rNNTEySBO6tFsJY9YUC-36eUDIEAI8&s=10" 
+                             alt="Duffel" 
+                             loading="lazy">
+                    </div>
+                    <div class="partner-info">
+                        <h4>Duffel</h4>
+                        <p>Technologie de réservation</p>
+                    </div>
+                </div>
+
+                <!-- Luvia Travel (partenaire principal) -->
+                <div class="partner-card featured">
+                    <div class="partner-logo">
+                        <img src="https://ukbekfcjfcjcqrpxfpmq.supabase.co/storage/v1/object/public/logo%20luvia/Vertical%20Lockup%20on%20Blue%20Background.png" 
+                             alt="Luvia Travel" 
+                             loading="lazy">
+                    </div>
+                    <div class="partner-info">
+                        <h4>Luvia Travel</h4>
+                        <p>Plateforme de voyage</p>
+                        <span class="partner-badge">Mère</span>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- TÉMOIGNAGES -->
     <section class="testimonials-section">
@@ -1966,7 +2408,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="quote-icon">"</div>
                     <p>Une équipe passionnée et visionnaire. Luvia Place incarne l'avenir du voyage digital en Afrique.</p>
                     <cite>David N.</cite>
-                    <span class="role">Investisseur</span>
+                    <span class="role">voyageur</span>
                 </div>
             </div>
         </div>
@@ -2092,18 +2534,125 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <img src="https://ukbekfcjfcjcqrpxfpmq.supabase.co/storage/v1/object/public/logo%20luvia/Luvia%20Place%20logo%20fond%20bleu.png" alt="Luvia Place" class="footer-logo">
-                <p>Écrivons ensemble les futurs chapitres du voyage connecté africain.</p>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Colonne 1 - Marque -->
+            <div class="footer-col">
+                <div class="footer-brand">
+                    <img src="https://ukbekfcjfcjcqrpxfpmq.supabase.co/storage/v1/object/public/logo%20luvia/Luvia%20Place%20logo%20fond%20bleu.png" alt="Luvia Place" class="footer-logo">
+                    <p class="footer-description">Luvia Place est la plateforme digitale de Luvia Travel, une OTA nouvelle génération qui révolutionne le voyage en Afrique.</p>
+                    <div class="footer-social">
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+    <span class="icon icon-sm">
+       <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>    </span>
+</a>
+                        <a href="https://www.linkedin.com/company/127894230/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <span class="icon icon-sm">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                                    <rect x="2" y="9" width="4" height="12"/>
+                                    <circle cx="4" cy="4" r="2"/>
+                                </svg>
+                            </span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">
+                            <span class="icon icon-sm">
+                                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </span>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <span class="icon icon-sm">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                                    <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/>
+                                </svg>
+                            </span>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="footer-info">
-                <p>&copy; 2026 Luvia Travel. Tous droits réservés.</p>
+
+            <!-- Colonne 2 - Liens rapides -->
+            <div class="footer-col">
+                <h4 class="footer-title">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="#prologue">Prologue</a></li>
+                    <li><a href="#chapitre1">Chapitre I</a></li>
+                    <li><a href="#chapitre2">Chapitre II</a></li>
+                    <li><a href="#chapitre3">Chapitre III</a></li>
+                    <li><a href="#chapitre4">Chapitre IV</a></li>
+                    <li><a href="#timeline">Chronologie</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3 - Partenaires -->
+            <div class="footer-col">
+                <h4 class="footer-title">Partenaires</h4>
+                <ul class="footer-links">
+                    <li><a href="https://www.getyourguide.com" target="_blank" rel="noopener noreferrer">GetYourGuide</a></li>
+                    <li><a href="https://www.viator.com" target="_blank" rel="noopener noreferrer">Viator</a></li>
+                    <li><a href="#" target="_blank" rel="noopener noreferrer">Hare Krishna Travels</a></li>
+                    <li><a href="#" target="_blank" rel="noopener noreferrer">Nuitee Limited</a></li>
+                    <li><a href="#" target="_blank" rel="noopener noreferrer">Duffel</a></li>
+                    <li><a href="https://luviaplace.com" target="_blank" rel="noopener noreferrer">Luvia Travel</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 4 - Contact -->
+            <div class="footer-col">
+                <h4 class="footer-title">Contact</h4>
+                <ul class="footer-contact">
+                    <li>
+                        <span class="icon icon-sm">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </span>
+                        <a href="mailto:contact@luviaplace.com">contact@luviaplace.com</a>
+                    </li>
+                    <li>
+                        <span class="icon icon-sm">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </span>
+                        <span>Kinshasa, République Démocratique du Congo</span>
+                    </li>
+                    <li>
+                        <span class="icon icon-sm">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </span>
+                        <a href="tel:+243123456789">+243 123 456 789</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </footer>
 
+        <!-- Barre du bas -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p class="footer-copyright">&copy; 2026 Luvia Travel. Tous droits réservés.</p>
+                <div class="footer-legal">
+                    <a href="#">Mentions légales</a>
+                    <span class="separator">|</span>
+                    <a href="#">Politique de confidentialité</a>
+                    <span class="separator">|</span>
+                    <a href="#">CGU</a>
+                    <span class="separator">|</span>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
     <!-- JAVASCRIPT -->
     <script>
         // ============================================================
@@ -2155,27 +2704,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // ============================================================
         // 4. COMPTEURS ANIMÉS
         // ============================================================
-      function animateCounter(element) {
-    const target = parseInt(element.dataset.count);
-    const prefix = element.dataset.prefix || '';
-    const suffix = element.dataset.suffix || '';
-    const duration = 2000;
-    const start = performance.now();
+        function animateCounter(element) {
+            const target = parseInt(element.dataset.count);
+            const prefix = element.dataset.prefix || '';
+            const suffix = element.dataset.suffix || '';
+            const duration = 2000;
+            const start = performance.now();
 
-    function update(currentTime) {
-        const elapsed = currentTime - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const value = Math.floor(progress * target);
-        element.textContent = prefix + value + suffix;
+            function update(currentTime) {
+                const elapsed = currentTime - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const value = Math.floor(progress * target);
+                element.textContent = prefix + value + suffix;
 
-        if (progress < 1) {
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    element.textContent = prefix + target + suffix;
+                }
+            }
             requestAnimationFrame(update);
-        } else {
-            element.textContent = prefix + target + suffix;
         }
-    }
-    requestAnimationFrame(update);
-}
 
         const counterObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
